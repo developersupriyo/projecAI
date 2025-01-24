@@ -1,0 +1,138 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Protest+Strike&display=swap');
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            font-family: "Poppins",sans-serif;
+        }
+        .container{
+            background: #000;
+            height: 100vh;
+        }
+        .leftnav{
+            font-weight: 500;
+            font-size: large;
+        }
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    padding-right: 60px;
+    background: #000;
+    color: #fff;
+}
+.rightnav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+.rightnav ul li a{
+    color: #fff;
+    font-weight: 500;
+    
+}
+.rightnav{
+    display: flex;
+    justify-content: space-between;
+    /* width: 95%; */
+    gap: 90px;
+}
+#bg-img{
+    width: 100%;
+  height: auto;
+  max-height: 90vh;
+}
+.linemenu{
+    display: none;
+    cursor: pointer;
+}
+.iconnav{
+    cursor: pointer;
+}
+.crossnav{
+    display: none;
+    cursor: pointer;
+}
+@media (max-width: 957px) {
+    .rightnav{
+        display: none;
+    }
+    .linemenu{
+        display: flex;
+    }
+    .active{
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        background: #000;
+        width: 300px;
+        padding: 40px;
+        top: 70px;
+        gap: 60px;
+    }
+    .rightnav ul{
+        display: flex;
+        flex-direction: column;
+    }
+    .rightnav ul li:hover{
+        background: linear-gradient(120deg,#ff1cf7,#00f0ff);
+        padding: 6px 10px;
+        border-radius: 13px;
+        transition: 0.3s;
+    }
+    .rightnav .iconnav ul{
+        display: flex;
+        flex-direction: row;
+
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <div class="leftnav">Bureaucratic.AI</div>
+            <div class="rightnav">
+                    <ul>
+                        <li><a href="#">Voice Direction</a></li>
+                        <li><a href="#">Task Manager</a></li>
+                        <li><a href="#">Translator</a></li>
+                        <li><a href="#">Services</a></li>
+                    </ul>
+                    <div class="iconnav">
+                        <ul>
+                            <li><a href="#"></a><i class="fa-brands fa-github"></i></li>
+                            <li><a href="#"></a><i class="fa-brands fa-discord"></i></li>
+                            <li><a href="#"></a><i class="fa-brands fa-square-reddit"></i></li>
+                        <li><a href="#"></a><i class="fa-brands fa-twitter"></i></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="linemenu"><i class="fa-solid fa-bars"></i></div>
+            </div>
+            <img src="bg.png" id="bg-img">
+    </div>
+    <script>
+        const menu = document.querySelector(".linemenu");
+        const rightnav = document.querySelector(".rightnav");
+        const crossnav = document.querySelector(".crossnav");
+        const transitionmenu = document.querySelector(".fa-solid")
+
+        menu.addEventListener("click", () => {
+  rightnav.classList.toggle("active");
+});
+
+transitionmenu.addEventListener("click", () => {
+  transitionmenu.classList.toggle("fa-xmark");
+});
+        </script>
+</body>
+</html>
